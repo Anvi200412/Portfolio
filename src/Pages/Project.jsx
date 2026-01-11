@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
 import "./Project.css";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Project = () => {
+   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <Container className="py-5" id="Project">
-      <h2 className="text4">My Projects</h2>
+      <h2 className="text4"  data-aos="fade-down"
+    data-aos-duration="1200">My Projects</h2>
 
       <Row className="g-4">
-        <Col xs={12} md={6} className="d-flex">
+        <Col xs={12} md={6} className="d-flex" data-aos="fade-right"  data-aos-delay="200">
           <Card className="project-card border-0 w-100">
             <div className="project-image1">
               <div className="project-overlay">
@@ -27,7 +35,7 @@ const Project = () => {
           </Card>
         </Col>
 
-        <Col xs={12} md={6} className="d-flex">
+        <Col xs={12} md={6} className="d-flex" data-aos="fade-left" data-aos-delay="300">
           <Card className="project-card border-0 w-100">
             <div
               className="project-image"
@@ -47,7 +55,8 @@ const Project = () => {
         </Col>
       </Row>
       <Row className="g-4">
-        <Col xs={12} md={6} className="d-flex">
+        <Col xs={12} md={6} className="d-flex" data-aos="fade-right"
+       data-aos-delay="400">
           <Card className="project-card border-0 w-100">
             <div className="project-image2">
               <div className="project-overlay">
@@ -65,7 +74,7 @@ const Project = () => {
           </Card>
         </Col>
 
-        <Col xs={12} md={6} className="d-flex">
+        <Col xs={12} md={6} className="d-flex" data-aos="fade-left" data-aos-delay="500">
           <Card className="project-card border-0 w-100">
             <div
               className="project-image3"
